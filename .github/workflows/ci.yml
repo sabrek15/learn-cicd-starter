@@ -21,6 +21,11 @@ jobs:
       - name: Test Logic
         run: go test -cover ./...
 
+      - name: Run Gosec security Scanner
+        uses: securego/gosec@master
+        with: 
+          args: ./...
+
   style:
     name: Style
     runs-on: ubuntu-latest
